@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import { PropTypes } from "prop-types";
 
-const Message = () => {
-    return (
-        <div>
-            <h3 className="text-center message"></h3>
-        </div>
-    )
-}
+const Message = ({ isValid }) => (
+  <React.Fragment>
+    <h3 className="text-center message">
+      {isValid ? "Form is Complete!" : "Form is Incomplete!"}
+    </h3>
+  </React.Fragment>
+);
+
+Message.propTypes = {
+  isValid: PropTypes.bool
+};
 
 export default Message;
